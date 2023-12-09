@@ -10,13 +10,11 @@ export class RequestValidationError extends CustomError {
     Object.setPrototypeOf(this, RequestValidationError.prototype)
   }
 
-  serializeErrors(): { message: string; field?: string }[] {
-    /* return this.errors.map((error: ValidationError) => {
+  serializeErrors(): any[] {
+    return this.errors.map((error: ValidationError) => {
       if (error.type === 'field')
         return { message: error.msg, field: error.path }
-    }) */
-    return this.errors.map((error) => {
-      return { message: error.msg }
+      return []
     })
   }
 }
