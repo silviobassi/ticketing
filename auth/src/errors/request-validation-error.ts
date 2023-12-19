@@ -10,6 +10,7 @@ export class RequestValidationError extends CustomError {
     Object.setPrototypeOf(this, RequestValidationError.prototype)
   }
 
+  /* eslint-disable */
   serializeErrors(): any[] {
     return this.errors.map((error: ValidationError) => {
       if (error.type === 'field')
