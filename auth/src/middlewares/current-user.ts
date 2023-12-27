@@ -6,7 +6,7 @@ interface UserPayload {
   email: string
 }
 
-declare module 'express-serve-static-core' {
+declare global {
   interface Request {
     currentUser?: UserPayload
   }
